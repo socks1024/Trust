@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="AudioEvent" format=3 uid="uid://to2rm3u7d0l0"]
+
+[ext_resource type="AudioStream" uid="uid://exgupxsgwaou" path="res://content/art/audio/raw/sfx/Card and Board/chips_gather.wav" id="1_main"]
+[ext_resource type="AudioStream" uid="uid://dllngj83us02o" path="res://content/art/audio/raw/sfx/Card and Board/chips_gather_2.wav" id="2_var1"]
+[ext_resource type="AudioStream" uid="uid://ckm4pur3saro2" path="res://content/art/audio/raw/sfx/Card and Board/chips_gather_3.wav" id="3_var2"]
+[ext_resource type="Script" uid="uid://b8l57kl8oyb2f" path="res://content/script/audio/audio_event.gd" id="4_script"]
+
+[resource]
+script = ExtResource("4_script")
+name = &"LoanRepaid"
+audio_stream = ExtResource("1_main")
+bus = &"UI"
+random_volume_range = 1.0
+pitch = 1.2
+random_pitch_range = 0.15
+variants = Array[AudioStream]([ExtResource("2_var1"), ExtResource("3_var2")])
+metadata/_custom_type_script = "uid://b8l57kl8oyb2f"
