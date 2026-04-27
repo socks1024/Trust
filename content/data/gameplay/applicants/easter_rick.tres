@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="ApplicantData" format=3 uid="uid://crl0d2inj8j6k"]
+
+[ext_resource type="Script" uid="uid://brbq6jr1hl5qb" path="res://content/data/gameplay/applicant_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+applicant_name = "瑞克·桑切斯"
+gender = "男"
+age = 70
+profession = "科学家"
+profession_description = "跨维度独立研究员。掌握多项足以引发宇宙级灾难的未授权技术。长期寄居于直系亲属家中，无合法纳税记录。其发明的潜在商业价值极高，但因其极度不稳定的精神状态和反社会倾向，投资风险被评估为最高级。"
+residence_type = 4
+custom_residence_name = "西雅图"
+custom_residence_description = "史密斯宅邸附属车库。已被非法改造为高危跨维度实验室，存放有大量未登记的放射性物质和外星生物样本。"
+assets = Array[Dictionary]([{
+"category": "交通工具",
+"name": "飞船",
+"value": 500000
+}, {
+"category": "设备",
+"name": "传送枪",
+"value": 200000
+}])
+debts = Array[Dictionary]([{
+"amount": 50000,
+"category": "商业",
+"name": "跨维度赌债",
+"status": 1
+}])
+loan_amount = 30000
+loan_purpose = "跨维度实验"
+interest_rate_tier = 2
+statement = "*嗝*……听着，官僚主义的走狗，我需要这笔钱买点浓缩暗物质。别跟我提什么信用评估，我在C-137维度的信用分比你们整个星球的GDP都高。
+
+你要是不批，我就用传送枪去另一个维度的你那里贷，顺便把这个维度的你变成一只*嗝*……一只只会吃自己排泄物的弗洛格兽。
+
+快点签字，我赶时间。"
+repay_probability = 0.15
+bargain_sensitivity = 4

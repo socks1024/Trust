@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="ApplicantData" format=3 uid="uid://dxwafqjtpbrv6"]
+
+[ext_resource type="Script" uid="uid://brbq6jr1hl5qb" path="res://content/data/gameplay/applicant_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+applicant_name = "成龙"
+gender = "男"
+age = 70
+profession = "演员"
+profession_description = "国际知名动作电影演员及导演。以拒绝使用替身、亲自完成高危特技动作著称。收入来源广泛，具备极高的商业价值与偿还能力。"
+annual_income = 300000
+residence_type = 0
+custom_residence_name = "香港"
+custom_residence_description = "位于香港半山区的私人高档住宅。安保严密，内部藏有大量电影道具及个人收藏品。"
+assets = Array[Dictionary]([{
+"category": "住房",
+"name": "豪宅",
+"value": 500000
+}, {
+"category": "存款",
+"name": "片酬积蓄",
+"value": 400000
+}])
+loan_amount = 200000
+loan_purpose = "拍新电影"
+interest_rate_tier = 0
+statement = "大哥，是这样的，我准备筹拍一部新戏。这次的动作设计绝对是前所未有的！我要从直升机上跳到一辆正在爆炸的火车上，然后再滑板冲下雪山！
+
+保险公司？哎呀，那些保险公司早就把我拉黑名单了，他们说我拍电影太危险了。
+
+你放心，我的电影全球发行，票房绝对有保证，这笔钱很快就能还上。Duang的一下就还上了！"
+repay_probability = 0.9
+bargain_sensitivity = 2

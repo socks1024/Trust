@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dvjs775mio4ea"]
+
+[ext_resource type="Script" uid="uid://bi7ys4rlki21w" path="res://content/scene/ui/menus/settings/input/guide_config_item_controls/config_guide_item_buttons.gd" id="1_1n9kq"]
+[ext_resource type="PackedScene" uid="uid://dqbxnw0ado2hv" path="res://content/scene/ui/menus/settings/input/guide_config_item_controls/config_guide_item_category.tscn" id="3_l2h3w"]
+[ext_resource type="Script" path="res://addons/guide/guide_mapping_context.gd" id="5_gyxve"]
+[ext_resource type="Resource" uid="uid://dvphupq7ch3kl" path="res://content/data/input/guide/player/player_context.tres" id="6_nt30x"]
+
+[node name="ConfigGUIDEItemButtons" type="VBoxContainer" unique_id=1622751308]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_1n9kq")
+config_item_category_scene = ExtResource("3_l2h3w")
+remappable_contexts = Array[ExtResource("5_gyxve")]([ExtResource("6_nt30x")])
+config_section = "Input"
+config_key = "GuideRemappingConfig"
+
+[node name="Content" type="VBoxContainer" parent="." unique_id=1671809389]
+layout_mode = 2

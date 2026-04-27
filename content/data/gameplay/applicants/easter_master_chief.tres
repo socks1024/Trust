@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="ApplicantData" format=3 uid="uid://gl4rmewdg2xc"]
+
+[ext_resource type="Script" uid="uid://brbq6jr1hl5qb" path="res://content/data/gameplay/applicant_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+applicant_name = "约翰-117"
+gender = "男"
+age = 41
+profession = "超级战士"
+profession_description = "联合国太空司令部（UNSC）斯巴达-II计划特种兵，编号117。长期服役于前线，具备极高的战术素养与生存能力。军饷由军方按时发放。"
+annual_income = 120000
+residence_type = 2
+custom_residence_name = "UNSC无尽号"
+custom_residence_description = "UNSC无尽号超级航母。申请人无固定地面居所，长期处于战斗部署或冷冻休眠状态。"
+assets = Array[Dictionary]([{
+"category": "设备",
+"name": "雷神之锤动力装甲",
+"value": 500000
+}])
+loan_amount = 60000
+loan_purpose = "装甲升级"
+statement = "长官，我需要申请资金升级雷神之锤装甲的护盾模块。星盟的残党还在活动，洪魔的威胁也从未真正消除。
+
+UNSC后勤部削减了预算，说现在是和平时期。但 Cortana 告诉我，新的威胁正在逼近。
+
+我不需要休息，我只需要武器和装备。这笔钱关系到下一次任务的成败，而我的任务，是保护人类。请批准。"
+repay_probability = 0.8

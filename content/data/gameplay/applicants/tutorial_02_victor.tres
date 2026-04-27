@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="ApplicantData" format=3 uid="uid://cdfft4sonf6qk"]
+
+[ext_resource type="Script" uid="uid://brbq6jr1hl5qb" path="res://content/data/gameplay/applicant_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+applicant_name = "维克多·科尔"
+gender = "男"
+age = 41
+profession = "无业"
+residence_location = 4
+residence_type = 4
+debts = Array[Dictionary]([{
+"amount": 30000,
+"category": "赌博",
+"name": "赌场借贷",
+"status": 1
+}, {
+"amount": 12000,
+"category": "消费贷",
+"name": "消费贷",
+"status": 1
+}])
+loan_amount = 50000
+loan_purpose = "个人消费"
+loan_period = 4
+interest_rate_tier = 2
+statement = "审核员您好，我最近手头确实有些紧，急需一笔钱来周转一下生活。至于之前欠下的那些债务……那真的都只是一些意外情况，请您相信我，只要这笔贷款批下来，我很快就能把所有的钱都还上的。"
+repay_probability = 0.0
+bargain_sensitivity = 3

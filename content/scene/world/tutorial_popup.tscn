@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://c6tnkbg58nh1o"]
+
+[ext_resource type="Script" uid="uid://rujayak57xqx" path="res://content/scene/world/tutorial_popup.gd" id="1_script"]
+[ext_resource type="PackedScene" uid="uid://bkjowivgs5uon" path="res://content/scene/ui/common/button/common_button.tscn" id="2_btn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bg"]
+bg_color = Color(0, 0, 0, 0.75)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+content_margin_left = 30.0
+content_margin_top = 20.0
+content_margin_right = 30.0
+content_margin_bottom = 20.0
+bg_color = Color(0.12, 0.14, 0.18, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.4, 0.5, 0.7, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="Curve" id="Curve_r3w7i"]
+resource_local_to_scene = true
+_limits = [-0.5, 0.5, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.2, 0.4), 0.0, 0.0, 0, 0, Vector2(0.6, -0.15), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[node name="TutorialPopup" type="Panel" unique_id=2016292622]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bg")
+script = ExtResource("1_script")
+
+[node name="InnerPanel" type="PanelContainer" parent="." unique_id=91957125]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(600, 400)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -200.0
+offset_right = 300.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="VBox" type="VBoxContainer" parent="InnerPanel" unique_id=1924634242]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="PopupTitle" type="Label" parent="InnerPanel/VBox" unique_id=1563367677]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "教程"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="InnerPanel/VBox" unique_id=1422349020]
+layout_mode = 2
+
+[node name="ContentLabel" type="RichTextLabel" parent="InnerPanel/VBox" unique_id=1706714100]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+scroll_following = true
+
+[node name="BottomBar" type="HBoxContainer" parent="InnerPanel/VBox" unique_id=2127511048]
+layout_mode = 2
+alignment = 2
+
+[node name="PageLabel" type="Label" parent="InnerPanel/VBox/BottomBar" unique_id=996534729]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 14
+text = "1 / 4"
+vertical_alignment = 1
+
+[node name="NextBtn" parent="InnerPanel/VBox/BottomBar" unique_id=659666038 instance=ExtResource("2_btn")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "下一步 →"
+ease_curve = SubResource("Curve_r3w7i")

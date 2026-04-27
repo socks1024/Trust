@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="ApplicantData" format=3 uid="uid://bwtrcs3ycealy"]
+
+[ext_resource type="Script" uid="uid://brbq6jr1hl5qb" path="res://content/data/gameplay/applicant_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+applicant_name = "阿尔伯特·爱因斯坦"
+gender = "男"
+age = 55
+profession = "物理学家"
+profession_description = "普林斯顿高等研究院理论物理学教授，诺贝尔物理学奖获得者。学术地位极高，但个人财务管理能力较弱，收入主要依赖教职薪水。"
+annual_income = 60000
+custom_residence_name = "普林斯顿"
+custom_residence_description = "位于新泽西州普林斯顿默瑟街112号的普通住宅。内部堆满手稿与书籍，生活设施简朴。"
+assets = Array[Dictionary]([{
+"category": "存款",
+"name": "诺贝尔奖金",
+"value": 80000
+}])
+debts = Array[Dictionary]([{
+"amount": 40000,
+"category": "消费贷",
+"name": "前妻赡养费",
+"status": 0
+}])
+loan_amount = 50000
+loan_purpose = "统一场论研究"
+loan_period = 3
+statement = "年轻人，时间是相对的，但银行的还款期限显然是绝对的。我现在的研究到了关键阶段，我试图将引力和电磁力统一起来，这是一个比相对论更宏大的构想。
+
+可惜，研究院的薪水不足以支撑我升级一些必要的计算设备。上帝不掷骰子，我也不喜欢在财务上冒险，但我确实需要这笔资金。
+
+如果我的理论成功了，它将改变人类对宇宙的认知。这难道不比投资那些工厂更有价值吗？"
+repay_probability = 0.55

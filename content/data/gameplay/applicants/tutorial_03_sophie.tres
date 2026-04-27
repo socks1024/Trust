@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="ApplicantData" format=3 uid="uid://bennx6g5qlnp7"]
+
+[ext_resource type="Script" uid="uid://brbq6jr1hl5qb" path="res://content/data/gameplay/applicant_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+applicant_name = "苏菲·陈"
+gender = "女"
+age = 31
+profession = "商人"
+annual_income = 22000
+residence_location = 1
+assets = Array[Dictionary]([{
+"category": "交通工具",
+"name": "货运飞船",
+"value": 25000
+}, {
+"category": "存款",
+"name": "存款",
+"value": 5000
+}])
+debts = Array[Dictionary]([{
+"amount": 8000,
+"category": "医疗",
+"name": "医疗欠款",
+"status": 0
+}])
+loan_amount = 35000
+loan_purpose = "飞船维修"
+statement = "飞船的导航系统出了故障，再不修就接不了远程运输单了。我有稳定的货运合同，修好就能继续赚钱。医疗那笔钱是去年生病欠的，一直在按时还。"
+repay_probability = 0.55
+bargain_sensitivity = 0

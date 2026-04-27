@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://wf7efvy8mwr3"]
+
+[ext_resource type="PackedScene" uid="uid://mx5v06pw2aqd" path="res://content/scene/ui/common/guide_input_button/guide_input_button.tscn" id="1_fpnve"]
+[ext_resource type="Script" uid="uid://vwkbi5vpgi3g" path="res://content/scene/ui/menus/settings/input/guide_config_item_controls/guide_config_item_button.gd" id="2_tif7b"]
+
+[sub_resource type="Curve" id="Curve_3sds1"]
+resource_local_to_scene = true
+_limits = [-0.5, 0.5, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.2, 0.4), 0.0, 0.0, 0, 0, Vector2(0.6, -0.15), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[node name="GUIDEConfigItemButton" unique_id=1648645154 instance=ExtResource("1_fpnve")]
+script = ExtResource("2_tif7b")
+ease_curve = SubResource("Curve_3sds1")

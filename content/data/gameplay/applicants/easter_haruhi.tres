@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="ApplicantData" format=3 uid="uid://7uuua4uhao0j"]
+
+[ext_resource type="Script" uid="uid://brbq6jr1hl5qb" path="res://content/data/gameplay/applicant_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+applicant_name = "凉宫春日"
+gender = "女"
+age = 16
+profession = "高中生"
+profession_description = "县立北高在读学生，非官方社团SOS团创立者及实际控制人。经多方秘密机构评估，该个体具备无意识改变现实的极度危险能力。当前无独立经济能力，其行为模式具有极高的不可预测性。"
+residence_type = 4
+custom_residence_name = "西宫市"
+custom_residence_description = "县立北高文艺部活动室。已被该个体强行征用为社团活动据点，内部设施简陋，仅有一台来源不明的旧电脑。"
+loan_amount = 50000
+loan_purpose = "SOS团活动经费"
+statement = "我对普通的贷款没有兴趣！如果你们银行里有外星人、未来人、异世界人或者超能力者，就让他们来给我办手续！
+
+我们SOS团要拍一部震惊世界的电影，需要五万块经费。不批的话，后果你自己想吧，我可不保证这个世界还能维持现状。"
+repay_probability = 0.2
+bargain_sensitivity = 2

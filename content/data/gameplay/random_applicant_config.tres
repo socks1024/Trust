@@ -1,0 +1,327 @@
+[gd_resource type="Resource" script_class="RandomApplicantConfig" format=3 uid="uid://ryhbla56fs3x"]
+
+[ext_resource type="Script" uid="uid://55qhhu2f5mw6" path="res://content/data/gameplay/random_applicant_config.gd" id="1"]
+[ext_resource type="Script" uid="uid://b1gv0vkn05erb" path="res://content/data/gameplay/debt_reason_config.gd" id="2_debt"]
+[ext_resource type="Script" uid="uid://b5soxl28tx75o" path="res://content/data/gameplay/loan_purpose_config.gd" id="3_loan"]
+[ext_resource type="Script" uid="uid://b6brewbevn5v0" path="res://content/data/gameplay/profession_config.gd" id="4_prof"]
+[ext_resource type="Script" uid="uid://dka1hshpip01c" path="res://content/data/gameplay/asset_template_config.gd" id="5_asset"]
+
+[sub_resource type="Resource" id="debt_medical"]
+script = ExtResource("2_debt")
+category = "医疗"
+display_name = "医疗欠款"
+description = "因疾病或伤害产生的医疗费用欠款。通常属于被动负债，不一定反映财务管理能力。"
+debt_ratio_min = 0.3
+debt_ratio_max = 0.8
+overdue_chance = 0.2
+
+[sub_resource type="Resource" id="debt_education"]
+script = ExtResource("2_debt")
+category = "教育"
+display_name = "教育贷款"
+description = "为接受教育或培训产生的贷款。属于投资性负债，可能带来未来收入增长。"
+debt_ratio_max = 0.4
+overdue_chance = 0.05
+settled_chance = 0.2
+
+[sub_resource type="Resource" id="debt_mortgage"]
+script = ExtResource("2_debt")
+category = "房贷"
+display_name = "房贷"
+description = "购买住房产生的按揭贷款。属于常见的长期负债，通常有不动产作为抵押。"
+debt_ratio_min = 0.5
+debt_ratio_max = 1.5
+overdue_chance = 0.05
+settled_chance = 0.05
+
+[sub_resource type="Resource" id="debt_consumer"]
+script = ExtResource("2_debt")
+category = "消费贷"
+display_name = "消费贷"
+description = "用于日常消费的贷款。频繁的消费贷可能暗示入不敷出的财务状况。"
+overdue_chance = 0.15
+
+[sub_resource type="Resource" id="debt_gambling"]
+script = ExtResource("2_debt")
+category = "赌博"
+display_name = "赌场借贷"
+description = "因赌博产生的债务。[color=#ff6b6b]高风险信号[/color]，严重影响还款意愿和能力。"
+debt_ratio_min = 0.2
+debt_ratio_max = 1.0
+overdue_chance = 0.4
+settled_chance = 0.05
+
+[sub_resource type="Resource" id="debt_business"]
+script = ExtResource("2_debt")
+category = "商业"
+display_name = "商业贷款"
+description = "经营活动中产生的商业贷款。属于生产性负债，需结合经营状况综合判断。"
+debt_ratio_min = 0.3
+debt_ratio_max = 0.8
+settled_chance = 0.15
+
+[sub_resource type="Resource" id="asset_housing"]
+script = ExtResource("5_asset")
+category = "住房"
+display_name = "自有住房"
+description = "申请者名下的不动产。拥有住房通常意味着较强的经济基础和稳定性，是重要的还款保障。"
+value_min = 30000
+value_max = 100000
+is_housing = true
+
+[sub_resource type="Resource" id="asset_savings"]
+script = ExtResource("5_asset")
+category = "存款"
+display_name = "定期存款"
+description = "申请者在殖民地银行中的现金储蓄。流动性最强的资产，是最直接的还款来源。"
+value_max = 30000
+
+[sub_resource type="Resource" id="asset_ship"]
+script = ExtResource("5_asset")
+category = "交通工具"
+display_name = "货运飞船"
+description = "申请者拥有的交通运输工具，如飞船、陆行车等。可作为抵押物，但贬值较快。"
+value_min = 20000
+value_max = 80000
+
+[sub_resource type="Resource" id="asset_equipment"]
+script = ExtResource("5_asset")
+category = "设备"
+display_name = "工作设备"
+description = "申请者用于生产经营的设备，如采矿设备、农业机械等。体现其职业投入和生产能力。"
+value_max = 40000
+
+[sub_resource type="Resource" id="asset_livestock"]
+script = ExtResource("5_asset")
+category = "牲畜"
+display_name = "牲畜"
+description = "申请者饲养的牲畜资产。价值受市场波动影响较大，变现能力一般。"
+value_min = 3000
+value_max = 20000
+
+[sub_resource type="Resource" id="asset_shop"]
+script = ExtResource("5_asset")
+category = "店铺"
+display_name = "店铺"
+description = "申请者经营的商铺。能产生持续收入，但价值与经营状况密切相关。"
+value_min = 15000
+value_max = 60000
+
+[sub_resource type="Resource" id="gp_housing"]
+script = ExtResource("3_loan")
+purpose_name = "住房建设"
+tier = 0
+responses = PackedStringArray("\"家里人多住不下了，想盖个新房子。\"", "\"现在的房子太破了，想翻新一下。\"", "\"打算在殖民地安个家，需要建房子。\"")
+loan_amount_min = 15000
+loan_amount_max = 50000
+loan_period_min = 3
+
+[sub_resource type="Resource" id="gp_education"]
+script = ExtResource("3_loan")
+purpose_name = "教育培训"
+responses = PackedStringArray("\"想送孩子去学技术，将来好找工作。\"", "\"自己想进修一下，学点新本事。\"", "\"孩子到了上学的年纪，学费不便宜。\"")
+loan_amount_min = 3000
+loan_amount_max = 20000
+loan_period_max = 4
+
+[sub_resource type="Resource" id="gp_gambling"]
+script = ExtResource("3_loan")
+purpose_name = "赌债偿还"
+tier = 2
+responses = PackedStringArray("\"……就是急用钱，你别问那么多。\"", "\"欠了点钱，不借的话会有麻烦。\"", "\"朋友拉我去赌了几把，结果……你懂的。\"")
+loan_amount_min = 3000
+loan_amount_max = 30000
+loan_period_max = 2
+
+[sub_resource type="Resource" id="sp_research"]
+script = ExtResource("3_loan")
+purpose_name = "科研项目"
+responses = PackedStringArray("\"我在研究新型合金材料，需要一笔实验经费。\"", "\"实验室需要采购一批试剂和设备。\"", "\"项目经费不够了，差一点就能出成果。\"")
+loan_amount_min = 10000
+loan_amount_max = 45000
+loan_period_min = 2
+loan_period_max = 5
+
+[sub_resource type="Resource" id="prof_engineer"]
+script = ExtResource("4_prof")
+profession_name = "工程师"
+description = "从事技术和工程工作。收入较高且稳定，属于殖民地紧缺人才。"
+repay_modifier = 0.05
+specific_purposes = Array[ExtResource("3_loan")]([SubResource("sp_research")])
+income_min = 25000
+income_max = 60000
+income_responses = PackedStringArray("\"搞工程一年收入 {income}，技术活。\"", "\"年薪 {income}，在殖民地算中等水平。\"", "\"一年到手 {income}，还算稳定。\"")
+statement_intro_templates = PackedStringArray("我是殖民地的一名{profession}，年收入大约{income}。", "在这里做{profession}有几年了，收入还算稳定。", "我是搞技术的，一直在殖民地做{profession}。")
+associated_asset_categories = PackedStringArray("设备")
+
+[sub_resource type="Resource" id="sp_medical"]
+script = ExtResource("3_loan")
+purpose_name = "医疗设备"
+tier = 0
+responses = PackedStringArray("\"诊所急需一批新设备，现在的都老化了。\"", "\"想买一台新的诊断仪，能救更多人。\"", "\"药品库存不够了，需要大批采购。\"")
+loan_amount_min = 10000
+loan_amount_max = 40000
+loan_period_min = 2
+loan_period_max = 4
+
+[sub_resource type="Resource" id="prof_doctor"]
+script = ExtResource("4_prof")
+profession_name = "医生"
+description = "提供医疗服务。收入高且稳定，社会地位较高，还款能力通常较强。"
+repay_modifier = 0.05
+specific_purposes = Array[ExtResource("3_loan")]([SubResource("sp_medical")])
+income_min = 30000
+income_max = 80000
+income_responses = PackedStringArray("\"诊所一年收入 {income}，比上不足比下有余。\"", "\"当医生年收入 {income}，还过得去。\"", "\"一年挣 {income}，救死扶伤也得养家。\"")
+statement_intro_templates = PackedStringArray("我是殖民地的一名{profession}，在这里行医多年了。", "做{profession}这行，收入还算可以，年收入{income}左右。", "我在殖民地开了个诊所，是个{profession}。")
+associated_asset_categories = PackedStringArray("设备")
+
+[sub_resource type="Resource" id="sp_shop"]
+script = ExtResource("3_loan")
+purpose_name = "商铺扩张"
+responses = PackedStringArray("\"生意不错，想扩大店面，多雇几个人。\"", "\"隔壁铺子要转让，我想盘下来。\"", "\"想进一批新货，扩展一下经营范围。\"")
+loan_amount_min = 10000
+loan_amount_max = 50000
+loan_period_min = 2
+loan_period_max = 5
+
+[sub_resource type="Resource" id="prof_merchant"]
+script = ExtResource("4_prof")
+profession_name = "商人"
+description = "从事商品贸易活动。收入波动较大但上限较高，经营能力直接影响还款能力。"
+repay_modifier = 0.02
+specific_purposes = Array[ExtResource("3_loan")]([SubResource("sp_shop")])
+income_min = 20000
+income_max = 80000
+income_responses = PackedStringArray("\"做买卖一年流水不少，纯收入大概 {income}。\"", "\"生意还行，一年能赚 {income} 左右。\"", "\"年收入 {income}，商人嘛，有赚有赔。\"")
+statement_intro_templates = PackedStringArray("我做点小买卖，算是个{profession}吧。", "在殖民地做{profession}好几年了，生意还行。", "我是个{profession}，一年收入大概{income}。")
+associated_asset_categories = PackedStringArray("店铺", "交通工具")
+
+[sub_resource type="Resource" id="sp_farming"]
+script = ExtResource("3_loan")
+purpose_name = "农业开发"
+tier = 0
+responses = PackedStringArray("\"我想开垦一片新农田，殖民地需要更多粮食。\"", "\"打算引进一批新品种，产量能翻倍。\"", "\"灌溉系统需要升级，旱季太难熬了。\"")
+loan_amount_min = 8000
+loan_amount_max = 35000
+loan_period_min = 2
+loan_period_max = 5
+
+[sub_resource type="Resource" id="prof_farmer"]
+script = ExtResource("4_prof")
+profession_name = "农场主"
+description = "从事农业生产。收入受季节和气候影响，但殖民地对粮食需求稳定。"
+specific_purposes = Array[ExtResource("3_loan")]([SubResource("sp_farming")])
+income_min = 12000
+income_max = 45000
+income_responses = PackedStringArray("\"种地一年收成 {income}，看天吃饭。\"", "\"农场一年产出折算下来 {income} 左右。\"", "\"年收入 {income}，丰年多点歉年少点。\"")
+statement_intro_templates = PackedStringArray("我在边境镇种地，是个{profession}，靠天吃饭。", "我是个{profession}，在殖民地种了好些年地了。", "做{profession}的，一年收成大概{income}。")
+associated_asset_categories = PackedStringArray("牲畜")
+
+[sub_resource type="Resource" id="sp_ship_repair"]
+script = ExtResource("3_loan")
+purpose_name = "飞船维修"
+responses = PackedStringArray("\"我的飞船引擎出了故障，不修好就没法工作了。\"", "\"飞船的导航系统坏了，急需维修。\"", "\"船体外壳被陨石砸了个洞，得赶紧补上。\"")
+loan_amount_max = 30000
+loan_period_max = 3
+
+[sub_resource type="Resource" id="prof_pilot"]
+script = ExtResource("4_prof")
+profession_name = "船员"
+description = "驾驶飞船从事运输或探索。收入较高但职业风险大，收入稳定性一般。"
+specific_purposes = Array[ExtResource("3_loan")]([SubResource("sp_ship_repair")])
+income_min = 20000
+income_max = 60000
+income_responses = PackedStringArray("\"飞一年能挣 {income}，风险高回报也高。\"", "\"跑星际航线年收入 {income}，还算不错。\"", "\"一年到手 {income}，就是常年不着家。\"")
+statement_intro_templates = PackedStringArray("我是跑星际航线的{profession}，常年在外面飞。", "做{profession}好几年了，一年能挣{income}。", "我是个{profession}，驾驶飞船搞运输的。")
+associated_asset_categories = PackedStringArray("交通工具")
+
+[sub_resource type="Resource" id="prof_nurse"]
+script = ExtResource("4_prof")
+profession_name = "护士"
+description = "从事护理工作。收入稳定但不高，属于殖民地基础医疗人员。"
+specific_purposes = Array[ExtResource("3_loan")]([SubResource("sp_medical")])
+income_min = 10000
+income_max = 30000
+income_responses = PackedStringArray("\"护士一年收入 {income}，忙得脚不沾地。\"", "\"年薪 {income}，三班倒挺辛苦的。\"", "\"一年挣 {income}，照顾病人也是积德。\"")
+statement_intro_templates = PackedStringArray("我是殖民地医院的{profession}，工作挺忙的。", "做{profession}好几年了，收入不高但稳定。", "我在医院当{profession}，一年收入{income}左右。")
+
+[sub_resource type="Resource" id="prof_technician"]
+script = ExtResource("4_prof")
+profession_name = "技术员"
+description = "从事机械维修和保养。技术性工作，收入中等偏上，需求稳定。"
+repay_modifier = -0.02
+specific_purposes = Array[ExtResource("3_loan")]([SubResource("sp_ship_repair")])
+income_min = 15000
+income_max = 40000
+income_responses = PackedStringArray("\"修修补补一年挣 {income}，手艺活。\"", "\"技工年收入 {income}，活多的时候还行。\"", "\"一年到手 {income}，靠手艺吃饭。\"")
+statement_intro_templates = PackedStringArray("我是个{profession}，专门修各种设备。", "做{profession}靠手艺吃饭，一年挣{income}。", "在殖民地当{profession}，修修补补的活儿。")
+associated_asset_categories = PackedStringArray("设备")
+
+[sub_resource type="Resource" id="sp_mining"]
+script = ExtResource("3_loan")
+purpose_name = "矿场投资"
+tier = 2
+responses = PackedStringArray("\"探测到一处新矿脉，投资开采肯定能赚。\"", "\"矿场设备老化了，想换一批新的。\"", "\"有个矿场转让的机会，价格很合适。\"")
+loan_amount_min = 20000
+loan_amount_max = 50000
+loan_period_min = 3
+
+[sub_resource type="Resource" id="prof_miner"]
+script = ExtResource("4_prof")
+profession_name = "矿工"
+description = "在殖民地矿区从事采矿作业。收入稳定但偏低，工作环境艰苦，职业风险较高。"
+repay_modifier = -0.02
+specific_purposes = Array[ExtResource("3_loan")]([SubResource("sp_mining")])
+income_min = 15000
+income_max = 40000
+income_responses = PackedStringArray("\"下井一年能挣 {income}，辛苦钱。\"", "\"矿上干活一年到手 {income}，还行吧。\"", "\"年收入大概 {income}，都是拿命换的。\"")
+statement_intro_templates = PackedStringArray("我在矿区干了好些年了，是个{profession}。", "矿上的活儿虽然辛苦，但收入还行，一年能挣{income}左右。", "我是个{profession}，在矿区下井干活。")
+associated_asset_categories = PackedStringArray("设备")
+
+[sub_resource type="Resource" id="prof_caregiver"]
+script = ExtResource("4_prof")
+profession_name = "护工"
+description = "从事护理照料工作。收入偏低但稳定，属于殖民地基础服务人员。"
+repay_modifier = -0.03
+income_max = 25000
+income_responses = PackedStringArray("\"照顾老人一年挣 {income}，辛苦但踏实。\"", "\"护工年收入 {income}，不多但够用。\"", "\"一年到手 {income}，就是个伺候人的活。\"")
+statement_intro_templates = PackedStringArray("我是个{profession}，照顾老人和病人。", "做{profession}的，收入不高但踏实。", "在殖民地当{profession}，一年挣{income}。")
+
+[sub_resource type="Resource" id="prof_unemployed"]
+script = ExtResource("4_prof")
+profession_name = "无业"
+description = "[color=#ff6b6b]目前没有固定工作[/color]。缺乏稳定收入来源，还款能力存疑。"
+repay_modifier = -0.05
+income_min = 0
+income_max = 5000
+income_responses = PackedStringArray("\"现在没有固定工作，打打零工一年也就 {income}。\"", "\"失业中，靠积蓄过日子，偶尔挣个 {income}。\"", "\"没什么收入来源，一年大概 {income} 吧。\"")
+statement_intro_templates = PackedStringArray("我目前没有固定工作，一直在找机会。", "现在是无业状态，之前的工作丢了。", "暂时没有工作，靠打零工过日子。")
+
+[resource]
+script = ExtResource("1")
+first_names_male = PackedStringArray("杰克", "马库斯", "亚当", "诺亚", "伊桑", "卢卡斯", "奥利弗", "丹尼尔", "塞缪尔", "亨利")
+first_names_female = PackedStringArray("莉娜", "艾琳", "索菲亚", "艾玛", "米娅", "奥利维亚", "夏洛特", "阿梅莉亚", "伊莎贝拉", "艾娃")
+last_names = PackedStringArray("沃克", "张", "莫里森", "陈", "约翰逊", "威廉姆斯", "李", "布朗", "加西亚", "米勒", "戴维斯", "罗德里格斯", "马丁内斯", "赵", "王")
+professions = Array[ExtResource("4_prof")]([SubResource("prof_engineer"), SubResource("prof_doctor"), SubResource("prof_merchant"), SubResource("prof_farmer"), SubResource("prof_pilot"), SubResource("prof_nurse"), SubResource("prof_technician"), SubResource("prof_miner"), SubResource("prof_caregiver"), SubResource("prof_unemployed")])
+loan_purposes = Array[ExtResource("3_loan")]([SubResource("gp_housing"), SubResource("gp_education"), SubResource("gp_gambling")])
+general_assets = Array[ExtResource("5_asset")]([SubResource("asset_housing"), SubResource("asset_savings"), SubResource("asset_ship"), SubResource("asset_equipment"), SubResource("asset_livestock"), SubResource("asset_shop")])
+debt_templates = Array[ExtResource("2_debt")]([SubResource("debt_medical"), SubResource("debt_education"), SubResource("debt_mortgage"), SubResource("debt_consumer"), SubResource("debt_gambling"), SubResource("debt_business")])
+residence_location_modifiers = PackedFloat32Array(0.03, 0.01, 0, -0.01, -0.03)
+residence_location_descriptions = PackedStringArray("殖民地的核心区域，基础设施完善，治安良好。居住成本最高，居民经济条件普遍较好。", "围绕星际港口发展的区域，商业繁荣，人口流动性大。居住成本较高，就业机会多。", "殖民地的工业生产区域，工厂和车间密集。居住成本中等，以工人阶层为主。", "靠近矿脉的偏远区域，环境较差。居住成本低，居民多为矿业从业者。", "殖民地边缘的小型定居点，远离核心区域。居住成本最低，治安和基础设施较差。")
+residence_type_modifiers = PackedFloat32Array(0.03, 0.01, 0, -0.01, -0.03)
+residence_type_descriptions = PackedStringArray("申请者拥有住房产权。表明有一定的资产积累，居住稳定性最高。", "申请者通过贷款购买住房，尚在还款中。有资产但同时承担房贷负债。", "由雇主提供的集体住所。无住房资产，但居住成本低，与就业绑定。", "租赁他人房产居住。无住房资产，每月有固定租金支出。", "借住在亲友处。无住房资产也无租金支出，但居住稳定性最差。")
+statement_location_templates = Array[PackedStringArray]([PackedStringArray("住在中央区，生活条件还不错。", "我家在中央区，周围设施挺齐全的。"), PackedStringArray("家在星港区附近，每天看着飞船来来往往。", "住在星港区，人来人往挺热闹的。"), PackedStringArray("住在工业区，周围都是工厂。", "我住工业区，虽然吵了点但离上班近。"), PackedStringArray("住在矿区，离工作的地方近。", "家在矿区，条件差了点但方便。"), PackedStringArray("住在边境镇，虽然偏远但清静。", "我住边境镇，远是远了点但自在。")])
+statement_finance_good_templates = PackedStringArray("手头还有些积蓄，经济状况还算宽裕。", "这些年攒了点家底，日子过得去。", "经济上还行，有一定的积蓄。")
+statement_finance_normal_templates = PackedStringArray("经济上说不上好也说不上差，就那样吧。", "有点积蓄，也有点欠款，勉强平衡。", "经济状况一般，不好不坏。")
+statement_finance_poor_templates = PackedStringArray("最近经济上有点紧张，不过在想办法。", "欠了些钱，但都在慢慢还。", "之前遇到点困难，现在还在缓过来。")
+statement_bargain_desperate_templates = PackedStringArray("求求你尽快批准吧，真的等不了了。", "这笔钱对我来说是救命钱，什么条件我都能接受。", "拜托了，我真的走投无路了。")
+statement_bargain_normal_templates = PackedStringArray("希望能顺利批下来。", "条件合理的话，我很乐意合作。", "期待你们的好消息。")
+statement_bargain_confident_templates = PackedStringArray("我也在考虑其他几家的方案，看看哪家条件更好。", "以我的条件，应该能拿到不错的利率吧。", "不着急，慢慢谈，我不缺这一时半会儿。")
+dti_max_bonus = 0.15
+dti_max_penalty = -0.25
+nw_max_penalty = -0.15
+nw_max_bonus = 0.15
+income_max_penalty = -0.15
+income_max_bonus = 0.15
+no_debt_bonus = 0.1

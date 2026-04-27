@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="ApplicantData" format=3 uid="uid://caueb01ik5yc6"]
+
+[ext_resource type="Script" uid="uid://brbq6jr1hl5qb" path="res://content/data/gameplay/applicant_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+applicant_name = "莉娜·张"
+gender = "女"
+age = 28
+profession = "农场主"
+annual_income = 12000
+residence_location = 4
+assets = Array[Dictionary]([{
+"category": "牲畜",
+"name": "牲畜",
+"value": 8000
+}])
+debts = Array[Dictionary]([{
+"amount": 5000,
+"category": "商业",
+"name": "种子贷款",
+"status": 0
+}])
+loan_amount = 20000
+loan_purpose = "农业开发"
+loan_period = 2
+interest_rate_tier = 0
+statement = "\"想开垦南边那块荒地，能多养活不少人。种地收入不高，但胜在稳定，殖民地总得有人种粮食。\""
+repay_probability = 0.72

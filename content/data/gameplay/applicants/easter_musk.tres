@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="ApplicantData" format=3 uid="uid://f8g8yt4ktwvm"]
+
+[ext_resource type="Script" uid="uid://brbq6jr1hl5qb" path="res://content/data/gameplay/applicant_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+applicant_name = "埃隆·马斯克"
+gender = "男"
+age = 52
+profession = "企业家"
+profession_description = "跨国科技企业创始人及首席执行官。业务版图涵盖航天发射、新能源汽车制造及神经科技研发。个人资产评估极高，但资金多沉淀于企业股权，现金流状况呈现周期性紧张。"
+annual_income = 999999
+residence_type = 0
+custom_residence_name = "博卡奇卡"
+custom_residence_description = "位于德克萨斯州博卡奇卡的航天发射基地。申请人常驻于基地内的临时装配式住宅，以便全天候监控航天器测试进度。"
+assets = Array[Dictionary]([{
+"category": "交通工具",
+"name": "可回收火箭×3",
+"value": 800000
+}, {
+"category": "设备",
+"name": "脑机接口原型",
+"value": 200000
+}])
+debts = Array[Dictionary]([{
+"amount": 500000,
+"category": "商业",
+"name": "火星殖民计划预算超支",
+"status": 0
+}])
+loan_amount = 500000
+loan_purpose = "火星殖民第二期"
+loan_period = 3
+interest_rate_tier = 2
+statement = "听着，火星城市的第一期工程马上就要动工了。上一期预算超标？那是因为火箭炸了三次，但那是收集数据的必要过程！第四次绝对能成。
+
+你问我为什么不卖股票？开什么玩笑，我一抛售股价就得崩盘，到时候媒体又要乱写。
+
+批了这笔钱，我保证给你留一张去火星的VIP单程票，怎么样？"
+repay_probability = 1.0
+bargain_sensitivity = 2

@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="ApplicantData" format=3 uid="uid://bsqs4hkeorr0j"]
+
+[ext_resource type="Script" uid="uid://brbq6jr1hl5qb" path="res://content/data/gameplay/applicant_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+applicant_name = "诸葛亮"
+gender = "男"
+age = 46
+profession = "军事顾问"
+profession_description = "蜀汉政权核心管理层，担任丞相及首席军事战略顾问。具备极强的微观管理倾向，主导多项大型军事工程及后勤装备研发（如木牛流马）。薪资水平一般，但实际掌控国家财政大权。"
+annual_income = 60000
+custom_residence_name = "汉中"
+custom_residence_description = "蜀汉政权北部边境军事重镇的临时指挥所。该处安保严密，常年驻扎大量军队，且周边有大规模军屯农业设施。"
+assets = Array[Dictionary]([{
+"category": "设备",
+"name": "星际沙盘推演系统",
+"value": 50000
+}])
+debts = Array[Dictionary]([{
+"amount": 80000,
+"category": "商业",
+"name": "北伐军费垫付",
+"status": 0
+}])
+loan_amount = 50000
+loan_purpose = "雇佣十万大学生北伐"
+loan_period = 3
+statement = "亮受先帝之托，已六出祁山，然皆因兵力匮乏而功败垂成。
+
+今亮顿悟，欲招募十万应届大学生！此辈虽无实战经验，然精力充沛、薪资低廉，且精通PPT制作，实乃冲锋陷阵、汇报战果之良才。
+
+先以实习之名用之，若能克复中原，再议转正。望阁下速批此款，亮感激涕零！"
+repay_probability = 0.35
+bargain_sensitivity = 2

@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="ApplicantData" format=3 uid="uid://dn4f46tw478s6"]
+
+[ext_resource type="Script" uid="uid://brbq6jr1hl5qb" path="res://content/data/gameplay/applicant_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+applicant_name = "杰克·莫里森"
+gender = "男"
+age = 45
+profession = "矿工"
+annual_income = 25000
+residence_location = 3
+residence_type = 2
+assets = Array[Dictionary]([{
+"category": "住房",
+"name": "自有住房",
+"value": 40000
+}])
+loan_amount = 30000
+loan_purpose = "采矿设备"
+loan_period = 3
+statement = "\"新矿脉需要更好的钻头，旧设备效率太低了。矿上的活儿稳定，我没有任何负债。\""
+repay_probability = 0.75

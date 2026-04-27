@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="ApplicantData" format=3 uid="uid://d1ywm3jddhkmm"]
+
+[ext_resource type="Script" uid="uid://brbq6jr1hl5qb" path="res://content/data/gameplay/applicant_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+applicant_name = "艾琳·沃克"
+gender = "女"
+age = 34
+profession = "商人"
+annual_income = 18000
+residence_location = 1
+assets = Array[Dictionary]([{
+"category": "交通工具",
+"name": "货运飞船",
+"value": 12000
+}])
+debts = Array[Dictionary]([{
+"amount": 8000,
+"category": "医疗",
+"name": "医疗欠款",
+"status": 0
+}, {
+"amount": 15000,
+"category": "赌博",
+"name": "个人消费",
+"status": 1
+}])
+loan_amount = 50000
+loan_purpose = "飞船维修"
+loan_period = 5
+statement = "\"我的货运飞船引擎上个月坏了，现在停在港口动不了。修好了才能继续跑运输，不然这几个月的合同全得违约。\""
+repay_probability = 0.35

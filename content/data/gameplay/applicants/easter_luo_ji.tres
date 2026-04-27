@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="ApplicantData" format=3 uid="uid://c6kocnnp2oum5"]
+
+[ext_resource type="Script" uid="uid://brbq6jr1hl5qb" path="res://content/data/gameplay/applicant_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+applicant_name = "罗辑"
+gender = "男"
+age = 38
+profession = "社会学教授"
+profession_description = "前大学社会学教授，现任联合国行星防御理事会指定面壁者。享有极高的资源调配权限，但其真实战略意图被严格保密。收入来源为联合国专项津贴，资金流向常呈现出难以理解的非理性特征。"
+annual_income = 70000
+custom_residence_name = "纽约"
+custom_residence_description = "联合国行星防御理事会提供的最高安保级别住所。该个体近期频繁表达对该居住环境的不满，并要求迁移至自然水域附近。"
+assets = Array[Dictionary]([{
+"category": "存款",
+"name": "面壁者专项资金",
+"value": 100000
+}])
+loan_amount = 80000
+loan_purpose = "购买湖畔别墅"
+loan_period = 3
+statement = "我需要一栋湖畔别墅，还要一瓶罗曼尼·康帝，以及一幅蒙娜丽莎的赝品。为什么？这是计划的一部分。你不需要理解，你只需要批准。
+
+如果我不去那个湖边，人类文明可能就完蛋了。当然，如果你觉得人类的存亡不值这八万块钱，你大可以拒绝。
+
+反正……这也是计划的一部分。"
+repay_probability = 1.0

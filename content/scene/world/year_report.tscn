@@ -1,0 +1,199 @@
+[gd_scene format=3 uid="uid://c368hhsb6tp4i"]
+
+[ext_resource type="Script" uid="uid://dje24pxsftdn8" path="res://content/scene/world/year_report.gd" id="1_script"]
+[ext_resource type="PackedScene" uid="uid://bkjowivgs5uon" path="res://content/scene/ui/common/button/common_button.tscn" id="2_cmbtn"]
+[ext_resource type="Script" uid="uid://dmw36oljyeem8" path="res://content/script/audio/audio_event_player.gd" id="3_aep"]
+[ext_resource type="Resource" path="res://content/art/audio/events/ui/loan_repaid.tres" id="4_repaid"]
+[ext_resource type="Resource" path="res://content/art/audio/events/ui/loan_defaulted.tres" id="5_defaulted"]
+
+[sub_resource type="Curve" id="Curve_xol5f"]
+resource_local_to_scene = true
+_limits = [-0.5, 0.5, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.2, 0.4), 0.0, 0.0, 0, 0, Vector2(0.6, -0.15), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Curve" id="Curve_ue2ar"]
+resource_local_to_scene = true
+_limits = [-0.5, 0.5, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.2, 0.4), 0.0, 0.0, 0, 0, Vector2(0.6, -0.15), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Curve" id="Curve_ouyu0"]
+resource_local_to_scene = true
+_limits = [-0.5, 0.5, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.2, 0.4), 0.0, 0.0, 0, 0, Vector2(0.6, -0.15), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[node name="YearReport" type="Control" unique_id=1821583332]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+repaid_sfx = ExtResource("4_repaid")
+defaulted_sfx = ExtResource("5_defaulted")
+
+[node name="Background" type="Panel" parent="." unique_id=445709482]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SfxPlayer" type="AudioStreamPlayer" parent="." unique_id=888888001]
+unique_name_in_owner = true
+bus = &"UI"
+script = ExtResource("3_aep")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=368461887]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=773613607]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1380662057]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "📊 第 1 年 年度报告"
+horizontal_alignment = 1
+
+[node name="TitleSep" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=1937368081]
+layout_mode = 2
+
+[node name="ApprovalSection" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1751284479]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="ApprovedLabel" type="Label" parent="MarginContainer/VBoxContainer/ApprovalSection" unique_id=1541591114]
+unique_name_in_owner = true
+layout_mode = 2
+text = "本年批准贷款：0 笔"
+
+[node name="RejectedLabel" type="Label" parent="MarginContainer/VBoxContainer/ApprovalSection" unique_id=1170462314]
+unique_name_in_owner = true
+layout_mode = 2
+text = "拒绝：0 笔"
+
+[node name="NewLoanLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=430679764]
+unique_name_in_owner = true
+layout_mode = 2
+text = "新增放贷：0"
+
+[node name="RepaymentTitle" type="Label" parent="MarginContainer/VBoxContainer" unique_id=917102052]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "── 还款情况 ──"
+
+[node name="RepaymentScroll" type="ScrollContainer" parent="MarginContainer/VBoxContainer" unique_id=805173094]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="RepaymentContent" type="VBoxContainer" parent="MarginContainer/VBoxContainer/RepaymentScroll" unique_id=1812826477]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="RepaidVBox" type="VBoxContainer" parent="MarginContainer/VBoxContainer/RepaymentScroll/RepaymentContent" unique_id=1652848734]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="DefaultedVBox" type="VBoxContainer" parent="MarginContainer/VBoxContainer/RepaymentScroll/RepaymentContent" unique_id=1581700469]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="OngoingVBox" type="VBoxContainer" parent="MarginContainer/VBoxContainer/RepaymentScroll/RepaymentContent" unique_id=1567276519]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="FundTitle" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1497143634]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "── 资金变动 ──"
+
+[node name="InterestIncomeLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=712000341]
+unique_name_in_owner = true
+layout_mode = 2
+text = "利息收入：+0"
+
+[node name="BadDebtLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=787536590]
+unique_name_in_owner = true
+layout_mode = 2
+text = "坏账损失：-0"
+
+[node name="ColonyTaxLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=691311410]
+unique_name_in_owner = true
+layout_mode = 2
+text = "殖民地税收：-0"
+
+[node name="FundChangeLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=313599427]
+unique_name_in_owner = true
+layout_mode = 2
+text = "资金池：0 → 0"
+
+[node name="FundSep" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=372376518]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="CareerTitle" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1611446010]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "── 你的审核生涯 ──"
+
+[node name="CareerVBox" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1302264166]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="ButtonSep" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=1000576187]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ButtonBar" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1136461628]
+layout_mode = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="RestartBtn" parent="MarginContainer/VBoxContainer/ButtonBar" unique_id=1949420959 instance=ExtResource("2_cmbtn")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "🔄 重新开始"
+ease_curve = SubResource("Curve_xol5f")
+
+[node name="BackToMenuBtn" parent="MarginContainer/VBoxContainer/ButtonBar" unique_id=1703242787 instance=ExtResource("2_cmbtn")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "🏠 返回主菜单"
+ease_curve = SubResource("Curve_ue2ar")
+
+[node name="NextYearBtn" parent="MarginContainer/VBoxContainer/ButtonBar" unique_id=413016576 instance=ExtResource("2_cmbtn")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "进入下一年 →"
+ease_curve = SubResource("Curve_ouyu0")

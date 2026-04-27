@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="ApplicantData" format=3 uid="uid://fo5ewf2gtllm"]
+
+[ext_resource type="Script" uid="uid://brbq6jr1hl5qb" path="res://content/data/gameplay/applicant_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+applicant_name = "韩·索罗"
+gender = "男"
+age = 35
+profession = "走私船长"
+profession_description = "银河系地下经济活跃参与者，主营高风险违禁品运输。收入极不稳定，且常面临帝国军方及黑帮势力的双重追捕。"
+annual_income = 60000
+custom_residence_name = "千年隼号"
+custom_residence_description = "经高度非法改装的YT-1300轻型货船，具备超光速引擎。该船只同时作为申请人的主要居所与作案工具。"
+assets = Array[Dictionary]([{
+"category": "交通工具",
+"name": "千年隼号",
+"value": 400000
+}])
+debts = Array[Dictionary]([{
+"amount": 80000,
+"category": "赌博",
+"name": "欠赫特人的钱",
+"status": 1
+}])
+loan_amount = 80000
+loan_purpose = "还债和飞船维修"
+interest_rate_tier = 2
+statement = "听着，伙计，我急需这笔钱。贾巴那个大鼻涕虫派了赏金猎人到处找我，上一个在坎蒂纳酒吧差点打中我，当然，是我先开的枪。
+
+我的千年隼号是银河系最快的飞船，12秒差距跑完科舍尔航线！什么距离单位？别管那些书呆子的理论了！
+
+只要修好超空间引擎，我跑一趟大单子就能连本带利还给你。你要是不信，问我的副驾驶，他是个两米高的伍基人，脾气可不太好。"
+repay_probability = 0.45
+bargain_sensitivity = 0

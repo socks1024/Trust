@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ej3yyjr1ccyp"]
+
+[ext_resource type="Script" uid="uid://cm6skwm37mpcf" path="res://content/scene/world/scrolling_news.gd" id="1_script"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_news"]
+font_size = 20
+
+[node name="ScrollingNews" type="MarginContainer" unique_id=316447972]
+clip_contents = true
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_right = 24
+script = ExtResource("1_script")
+label_settings = SubResource("LabelSettings_news")
+
+[node name="LabelContainer" type="Control" parent="." unique_id=555135383]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3

@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="ApplicantData" format=3 uid="uid://bupji8425j10i"]
+
+[ext_resource type="Script" uid="uid://brbq6jr1hl5qb" path="res://content/data/gameplay/applicant_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+applicant_name = "陈老板"
+gender = "男"
+age = 52
+profession = "商人"
+annual_income = 15000
+assets = Array[Dictionary]([{
+"category": "设备",
+"name": "厨房设备",
+"value": 5000
+}])
+debts = Array[Dictionary]([{
+"amount": 8000,
+"category": "消费贷",
+"name": "厨具贷款",
+"status": 0
+}])
+loan_amount = 80000
+loan_purpose = "创业"
+loan_period = 6
+interest_rate_tier = 2
+statement = "\"我想开个自己的餐馆！殖民地就缺一个像样的馆子！在食堂干了十几年，攒了点手艺。\""
+repay_probability = 0.25

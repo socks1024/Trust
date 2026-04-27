@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="ApplicantData" format=3 uid="uid://bwtahl1wy8rqb"]
+
+[ext_resource type="Script" uid="uid://brbq6jr1hl5qb" path="res://content/data/gameplay/applicant_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+applicant_name = "夏亚·阿兹纳布尔"
+gender = "男"
+age = 34
+profession = "新吉翁总帅"
+profession_description = "新吉翁军总帅，传奇机动战士驾驶员，人称\"赤色彗星\"。具备极高的政治影响力和军事指挥能力。收入来源为新吉翁军费及个人资产。"
+annual_income = 150000
+residence_type = 2
+custom_residence_name = "斯威特·沃特"
+custom_residence_description = "位于L5宙域的难民收容殖民卫星，现为新吉翁军的秘密据点。"
+assets = Array[Dictionary]([{
+"category": "设备",
+"name": "沙扎比",
+"value": 900000
+}])
+debts = Array[Dictionary]([{
+"amount": 500000,
+"category": "商业",
+"name": "阿克西斯购买尾款",
+"status": 0
+}])
+loan_amount = 200000
+loan_purpose = "购买小行星阿克西斯"
+loan_period = 3
+statement = "地球上的人类灵魂被重力束缚得太久了。为了纠正这个错误，我需要买下阿克西斯，把它降落到地球上，引发核子冬天。
+
+这笔贷款将用于支付阿克西斯的尾款。你问我怎么还钱？等地球被净化，全人类都移居宇宙，新吉翁将统治一切，区区贷款算什么。
+
+阿姆罗那个家伙肯定会来阻止我，所以我还需要升级沙扎比的武装。签字吧，为了全人类的革新。"
+repay_probability = 0.4
+bargain_sensitivity = 2

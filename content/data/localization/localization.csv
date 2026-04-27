@@ -1,0 +1,46 @@
+keys,en,zh
+LANG_SETTING,Language,语言
+TITLE,Nova Dawn Credit Center,新曙光信用中心
+NEW_GAME,New Game,新游戏
+CONTINUE_GAME,Continue,继续游戏
+SETTINGS,Settings,设置
+CREDITS,Credits,制作者
+EXIT_GAME,Exit,退出
+GAME_SETTINGS,Game,游戏
+VIDEO_SETTINGS,Video,显示
+AUDIO_SETTINGS,Audio,音频
+INPUT_SETTINGS,Input,输入
+BACK,Back,返回
+RESET_ALL,Reset All,重置所有
+MASTER_VOL,Master Volume,总音量
+MUSIC_VOL,Music Volume,音乐音量
+SFX_VOL,SFX Volume,音效音量
+UI_VOL,UI Volume,UI音量
+VOICE_VOL,Voice Volume,语音音量
+PAUSE,Paused,暂停
+RESUME,Resume,恢复游戏
+HELP,Help,帮助
+BACK_TO_START,Back to Start,回到主界面
+TUT_TITLE_INTRO,System Initialization,📡 系统初始化
+TUT_TITLE_HINT_0,Read the Application,📋 认识申请表
+TUT_TITLE_HINT_1,Watch for Risk Signals,⚠ 关注风险信号
+TUT_TITLE_HINT_2,Approval Conditions,📝 审批条件
+TUT_TITLE_REPORT,Annual Report Guide,📊 年度报告说明
+TUT_BTN_START,Start Working →,开始工作 →
+TUT_BTN_REVIEW,Start Reviewing →,开始审核 →
+TUT_BTN_REPORT,View Report →,查看报告 →
+TUT_INTRO_1,TODO_EN,[font_size=20]欢迎接入，审核员。[/font_size]\n\n你是殖民星球[color=#c0a0ff]「新曙光」[/color]上唯一的信贷审核AI终端。\n这颗偏远的殖民地正处于早期开发阶段——\n人口稀少，资源紧张，一切都围绕生存与发展展开。\n\n[color=#f0c050]新曙光信用中心[/color]是这里唯一的金融机构，\n而你，就是它的核心。
+TUT_INTRO_2,TODO_EN,你的职责是审核居民提交的贷款申请。\n\n每位申请者会提交一份贷款申请表，\n上面记录了他们的个人信息、财务状况和贷款需求。\n\n你需要阅读申请表，评估风险，然后做出决定——\n[color=#5ee8e8]✅ 批准[/color]，或 [color=#ff6b6b]❌ 拒绝[/color]。
+TUT_INTRO_3,TODO_EN,[color=#5ee8e8]✅ 批准贷款[/color]：资金池减少，但到期后可收回[color=#f0c050]本金 + 利息[/color]。\n[color=#ff6b6b]❌ 拒绝贷款[/color]：资金安全，但殖民地也失去了发展机会。\n\n[color=#f0c050]⚠ 注意：并非所有人都会按时还款。[/color]\n如果借款人违约，你将[color=#ff6b6b]损失全部本金[/color]。\n\n你的目标：让信用中心的[color=#f0c050]资金池保持健康[/color]，\n同时帮助殖民地持续发展。
+TUT_INTRO_4,TODO_EN,"[color=#ff6b6b]资金池归零 = 信用中心关停 = 殖民地废弃。[/color]\n\n现在，你的初始资金池为 [color=#f0c050]500,000 宇宙币[/color]。\n第一批申请者已经在等候了。\n\n准备好了吗？"
+TUT_HINT_0_1,TODO_EN,这是你的第一位申请者。\n\n右侧是贷款申请表，包含申请者的所有信息：\n  · 上方：[color=#c0a0ff]个人信息[/color]（姓名、职业、收入、居住地）\n  · 中间：[color=#c0a0ff]财务状况[/color]（资产明细、负债明细、净资产）\n  · 下方：[color=#c0a0ff]贷款信息[/color]（金额、用途、周期、利率）\n\n点击申请表中的 ⓘ 按钮，可以在左侧查看详细说明。\n\n仔细阅读后，点击底部的 [color=#5ee8e8]✅ 批准[/color] 或 [color=#ff6b6b]❌ 拒绝[/color] 做出决定。
+TUT_HINT_1_1,TODO_EN,"第二位申请者来了。\n\n这次请特别关注申请表中间的「财务状况」区域：\n  · 负债明细中的状态栏很重要——\n    [color=#5ee8e8]""还款中""[/color]表示正常还款，\n    [color=#ff6b6b]""⚠ 逾期""[/color]表示已经拖欠，是[color=#ff6b6b]重要的风险信号[/color]。\n  · 净资产 = 资产合计 - 负债合计（未结清）。\n    净资产为负意味着[color=#ff6b6b]资不抵债[/color]。\n\n试着综合判断这位申请者的还款能力。"
+TUT_HINT_2_1,TODO_EN,最后一位申请者。\n\n这次请注意申请表下方新出现的[color=#c0a0ff]「审批条件」[/color]区域。\n从现在起，你不仅可以决定批准或拒绝，\n还可以设定贷款条件：[color=#f0c050]利率[/color]和[color=#f0c050]抵押[/color]。
+TUT_HINT_2_2,TODO_EN,[color=#c0a0ff]📊 利率挡位[/color]\n\n每笔贷款都有一个「基础利率」，由贷款用途的风险等级决定。\n申请表上默认显示的就是该用途对应的基础利率。\n\n申请者的期望利率 = [color=#f0c050]基础利率 × 信用修正[/color]。\n信用越好的人，期望利率越低；信用越差的人，对高利率的容忍度越高。\n\n你可以自由调整利率：\n\n  [color=#5ee8e8]调低利率[/color]：利息收入减少，但借款人更容易接受\n  [color=#ff6b6b]调高利率[/color]：利息收入增加，但借款人可能拒绝
+TUT_HINT_2_3,TODO_EN,[color=#c0a0ff]🔒 抵押要求[/color]\n\n你可以要求借款人用资产作为抵押——\n  · 勾选资产后，如果借款人违约，抵押物会被变卖来弥补损失。\n  · 右侧会显示[color=#f0c050]「抵押估值 / 贷款金额」[/color]的比值，比值越高越安全。\n  · 但要求的抵押越多，借款人越可能拒绝。
+TUT_HINT_2_4,TODO_EN,[color=#c0a0ff]🤝 申请者接受度[/color]\n\n当你点击[color=#5ee8e8]「批准」[/color]后，借款人会根据你开出的条件决定是否接受。\n  · 利率高出他们的预期，会[color=#ff6b6b]降低贷款意愿[/color]；\n  · 要求抵押的资产太多，也会[color=#ff6b6b]降低贷款意愿[/color]。\n\n试着调整审批条件，然后做出你的决定。
+TUT_REPORT_1,TODO_EN,第1年结束了，这是你的年度报告。\n\n年度报告会在每年结束时出现，\n总结这一年的经营成果。
+TUT_REPORT_2,TODO_EN,报告上半部分展示：\n\n[color=#c0a0ff]📋 审批统计[/color]\n  本年批准和拒绝了多少笔贷款，新增放贷总额。\n\n[color=#f0c050]💰 还款情况[/color]\n  · [color=#5ee8e8]✅ 按时还款[/color]：到期且成功还款的贷款，本金+利息回到资金池。\n  · [color=#f0c050]⏳ 仍在还款期[/color]：尚未到期的贷款，还在等待中。\n  · [color=#ff6b6b]❌ 逾期未还[/color]：到期但借款人违约，本金全部损失。
+TUT_REPORT_3,TODO_EN,报告下半部分展示：\n\n[color=#c0a0ff]📊 资金变动[/color]\n  · [color=#5ee8e8]利息收入[/color]：成功回收的贷款产生的利息。\n  · [color=#ff6b6b]坏账损失[/color]：违约贷款造成的本金损失。\n  · [color=#f0c050]殖民地税收[/color]：每年需要缴纳的固定支出，逐年递增。\n  · [color=#f0c050]资金池变化[/color]：从年初到年末的资金池余额变动。\n\n[color=#ff6b6b]⚠ 资金池一旦归零，信用中心将被关停！[/color]
+TUT_REPORT_4,TODO_EN,每一笔贷款都是一次[i]信任的博弈[/i]。\n\n你无法预知每个人是否会守信，\n但你可以通过仔细阅读申请表来降低风险。\n\n准备好迎接下一年的挑战了吗？
+HELP_CONTENT,TODO_EN,"🎮 游戏说明\n\n你是殖民星球「新曙光」上唯一的信贷审核AI。\n你的职责是审核居民的贷款申请，决定批准或拒绝。\n\n📋 审核要点\n · 职业与收入：还款能力的核心指标\n · 资产与负债：关注净资产和逾期记录\n · 贷款信息：金额、用途、周期影响风险\n · 点击申请表中的 ⓘ 按钮可查看详细说明\n\n💰 经济规则\n · 批准贷款：资金池减少，到期后收回本金+利息\n · 拒绝贷款：资金安全，但殖民地失去发展机会\n · 借款人可能违约，届时本金全部损失\n · 每年需缴纳殖民地税收，且逐年递增\n\n⚠ 逾期是最重要的风险信号！\n\n❌ 资金池归零 = 信用中心关停 = 游戏结束"

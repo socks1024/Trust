@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="ApplicantData" format=3 uid="uid://del71c2qrfcup"]
+
+[ext_resource type="Script" uid="uid://brbq6jr1hl5qb" path="res://content/data/gameplay/applicant_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+applicant_name = "诺亚·张"
+gender = "男"
+age = 38
+profession = "工程师"
+annual_income = 40000
+residence_location = 0
+residence_type = 0
+assets = Array[Dictionary]([{
+"category": "住房",
+"name": "自有住房",
+"value": 50000
+}])
+loan_amount = 15000
+loan_purpose = "设备升级"
+loan_period = 2
+statement = "我是中央区实验室的一名高级工程师。我们实验室的分析仪最近老化严重，我需要申请一笔贷款来更换一台新的设备。我的工作非常稳定，收入也很可观，而且我目前没有任何负债。请您放心，我完全有能力按期分期还款，绝对不会出现违约的情况。"
+repay_probability = 1.0
+bargain_sensitivity = 3

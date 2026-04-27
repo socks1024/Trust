@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="ApplicantData" format=3 uid="uid://cp2krqaiickuh"]
+
+[ext_resource type="Script" uid="uid://brbq6jr1hl5qb" path="res://content/data/gameplay/applicant_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+applicant_name = "堂吉诃德·德·拉曼查"
+gender = "男"
+age = 50
+profession = "骑士"
+profession_description = "地方乡绅阶层，自封为游侠骑士。长期沉迷于中世纪骑士文学，存在严重的认知偏差与妄想症状。目前无稳定收入来源，主要依靠变卖祖传不动产维持其所谓的\"冒险\"活动。"
+annual_income = 8000
+residence_type = 0
+custom_residence_name = "拉曼查"
+custom_residence_description = "位于西班牙拉曼查地区的一处破败乡村庄园。建筑年久失修，内部堆满各类过时的骑士小说及生锈的冷兵器。"
+assets = Array[Dictionary]([{
+"category": "交通工具",
+"name": "瘦马一匹",
+"value": 500
+}, {
+"category": "设备",
+"name": "生锈盔甲",
+"value": 200
+}])
+debts = Array[Dictionary]([{
+"amount": 12000,
+"category": "商业",
+"name": "风车维修赔偿",
+"status": 1
+}])
+loan_amount = 20000
+loan_purpose = "讨伐巨人"
+loan_period = 2
+statement = "尊贵的金库守护者啊！吾乃拉曼查的堂吉诃德，正义的化身！
+
+吾急需这笔资金去讨伐那些伪装成风力发电站的邪恶巨人！上次交锋时，吾被那巨人挥舞的巨大手臂击飞，吾那愚钝的侍从桑丘竟说那是风车！荒谬！
+
+待吾斩下巨人首级，定将战利品献于阁下！"
+repay_probability = 0.05
+bargain_sensitivity = 3

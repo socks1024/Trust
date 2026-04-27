@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="StorySchedule" format=3 uid="uid://sqe1vk134k02"]
+
+[ext_resource type="Script" uid="uid://b0m70irg0j3ky" path="res://content/data/gameplay/story_schedule.gd" id="1"]
+[ext_resource type="Script" uid="uid://brbq6jr1hl5qb" path="res://content/data/gameplay/applicant_data.gd" id="1_2orvt"]
+[ext_resource type="Resource" uid="uid://b0eoaoad06vor" path="res://content/data/gameplay/applicants/easter_schrodinger.tres" id="2"]
+[ext_resource type="Resource" uid="uid://bsqs4hkeorr0j" path="res://content/data/gameplay/applicants/easter_zhuge_liang.tres" id="3"]
+[ext_resource type="Resource" uid="uid://cp2krqaiickuh" path="res://content/data/gameplay/applicants/easter_don_quixote.tres" id="4"]
+[ext_resource type="Resource" uid="uid://dumb0saijsw0j" path="res://content/data/gameplay/applicants/easter_yagami_light.tres" id="5"]
+[ext_resource type="Resource" uid="uid://bpiqhwjir4vpr" path="res://content/data/gameplay/applicants/easter_doraemon.tres" id="6"]
+[ext_resource type="Resource" uid="uid://crl0d2inj8j6k" path="res://content/data/gameplay/applicants/easter_rick.tres" id="7"]
+[ext_resource type="Resource" uid="uid://7uuua4uhao0j" path="res://content/data/gameplay/applicants/easter_haruhi.tres" id="8"]
+[ext_resource type="Resource" uid="uid://c6kocnnp2oum5" path="res://content/data/gameplay/applicants/easter_luo_ji.tres" id="9"]
+[ext_resource type="Resource" uid="uid://f8g8yt4ktwvm" path="res://content/data/gameplay/applicants/easter_musk.tres" id="10"]
+[ext_resource type="Resource" uid="uid://0pd0ds0ds3s" path="res://content/data/gameplay/applicants/easter_trump.tres" id="11"]
+[ext_resource type="Resource" uid="uid://cp07mkceo23hw" path="res://content/data/gameplay/applicants/easter_paul.tres" id="12"]
+[ext_resource type="Resource" uid="uid://fo5ewf2gtllm" path="res://content/data/gameplay/applicants/easter_han_solo.tres" id="13"]
+[ext_resource type="Resource" uid="uid://gl4rmewdg2xc" path="res://content/data/gameplay/applicants/easter_master_chief.tres" id="14"]
+[ext_resource type="Resource" uid="uid://bwtahl1wy8rqb" path="res://content/data/gameplay/applicants/easter_char.tres" id="15"]
+[ext_resource type="Resource" uid="uid://dxwafqjtpbrv6" path="res://content/data/gameplay/applicants/easter_jackie_chan.tres" id="16"]
+[ext_resource type="Resource" uid="uid://bwtrcs3ycealy" path="res://content/data/gameplay/applicants/easter_einstein.tres" id="17"]
+
+[resource]
+script = ExtResource("1")
+characters = Array[ExtResource("1_2orvt")]([ExtResource("2"), ExtResource("3"), ExtResource("4"), ExtResource("5"), ExtResource("6"), ExtResource("7"), ExtResource("8"), ExtResource("9"), ExtResource("10"), ExtResource("11"), ExtResource("12"), ExtResource("13"), ExtResource("14"), ExtResource("15"), ExtResource("16"), ExtResource("17")])

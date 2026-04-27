@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="ApplicantData" format=3 uid="uid://b0eoaoad06vor"]
+
+[ext_resource type="Script" uid="uid://brbq6jr1hl5qb" path="res://content/data/gameplay/applicant_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+applicant_name = "埃尔温·薛定谔"
+gender = "男"
+age = 55
+profession = "量子物理学家"
+profession_description = "理论物理学界资深研究员，主要研究方向为量子力学及波动力学。曾提出著名的宏观量子叠加态思想实验。主要收入来源为大学教职薪酬及学术奖项奖金。"
+annual_income = 80000
+residence_type = 0
+custom_residence_name = "维也纳"
+custom_residence_description = "位于奥地利维也纳大学物理系附近的教职工公寓。据走访调查，该住所内长期饲养有一只猫科动物，且室内常有不明实验设备运转声。"
+assets = Array[Dictionary]([{
+"category": "设备",
+"name": "量子计算机",
+"value": 120000
+}])
+loan_amount = 30000
+loan_purpose = "购买实验用猫粮"
+loan_period = 2
+interest_rate_tier = 0
+statement = "听着，我急需这笔钱来维持我的实验。在你盖下那个该死的印章之前，这笔贷款处于\"批准\"和\"拒绝\"的叠加态。
+
+你问猫怎么样了？它现在……既活着又死了，这取决于你是否批准我的贷款。但猫粮账单是确定的，每个月都在增长。
+
+所以，赶紧批了吧，别让波函数坍缩到错误的方向。"

@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="ApplicantData" format=3 uid="uid://cp07mkceo23hw"]
+
+[ext_resource type="Script" uid="uid://brbq6jr1hl5qb" path="res://content/data/gameplay/applicant_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+applicant_name = "保罗·阿特雷德斯"
+gender = "男"
+age = 20
+profession = "贵族继承人"
+profession_description = "厄拉科斯星区实际控制人及阿特雷德斯家族继承人。垄断了全宇宙唯一的高价值战略物资（香料）的开采与贸易。具备极高的偿还能力，但面临复杂的政治风险。"
+annual_income = 200000
+residence_type = 0
+custom_residence_name = "厄拉科斯"
+custom_residence_description = "极端干旱的沙漠行星，系战略物资香料的唯一产地。申请人目前居住于沙漠深处的地下掩体中。"
+assets = Array[Dictionary]([{
+"category": "设备",
+"name": "香料储备",
+"value": 600000
+}, {
+"category": "设备",
+"name": "蒸馏服",
+"value": 10000
+}])
+loan_amount = 150000
+loan_purpose = "香料期货投资"
+loan_period = 2
+statement = "我已经看到了未来。在无数条交织的时间线里，你最终都签下了这份贷款协议。
+
+香料就是权力，控制了香料就控制了整个宇宙的命脉。我要用这笔资金进行香料期货的杠杆操作。风险？对我来说不存在风险，因为结果早已注定。
+
+有些未来太过残酷，我不想向你描述，所以……签字吧。"
+repay_probability = 0.65
+bargain_sensitivity = 2

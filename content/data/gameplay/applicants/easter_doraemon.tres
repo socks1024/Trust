@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="ApplicantData" format=3 uid="uid://bpiqhwjir4vpr"]
+
+[ext_resource type="Script" uid="uid://brbq6jr1hl5qb" path="res://content/data/gameplay/applicant_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+applicant_name = "哆啦A梦"
+gender = "男"
+profession = "育儿机器人"
+profession_description = "22世纪量产型猫型育儿机器人（次品）。主要职责为监护并纠正特定未成年人的不良行为模式。其携带的四次元空间袋内含大量高价值未来科技产品，但均属租赁性质，无实际所有权。当前无合法收入来源。"
+residence_type = 4
+custom_residence_name = "东京"
+custom_residence_description = "东京都练马区野比宅邸二楼卧室壁橱。空间狭小但符合该型号机器人的休眠需求。"
+assets = Array[Dictionary]([{
+"category": "设备",
+"name": "四次元口袋",
+"value": 999999
+}])
+debts = Array[Dictionary]([{
+"amount": 8000,
+"category": "消费贷",
+"name": "铜锣烧赊账",
+"status": 0
+}])
+loan_amount = 15000
+loan_purpose = "购买铜锣烧"
+interest_rate_tier = 0
+statement = "拜托了！大雄那个笨蛋今天又考了零分，还被胖虎揍了一顿，我如果不吃点铜锣烧补充能量，真的会短路的！
+
+我的道具都是租来的不能抵押，但我可以借你任意门用一天！去夏威夷度假怎么样？或者用时光机去看看明天的彩票号码？
+
+求求你了，就借我这点钱吧！"
+repay_probability = 0.8
+bargain_sensitivity = 0

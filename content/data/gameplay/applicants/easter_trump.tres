@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="ApplicantData" format=3 uid="uid://0pd0ds0ds3s"]
+
+[ext_resource type="Script" uid="uid://brbq6jr1hl5qb" path="res://content/data/gameplay/applicant_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+applicant_name = "唐纳德·川普"
+gender = "男"
+age = 78
+profession = "政客"
+profession_description = "前国家元首及大型房地产集团实际控制人。名下持有大量商业地产及高尔夫球场。曾有多次企业破产重组记录，目前面临多项未决诉讼，财务状况受法律程序影响较大。"
+annual_income = 400000
+residence_type = 0
+custom_residence_name = "海湖庄园"
+custom_residence_description = "位于佛罗里达州棕榈滩的顶级私人俱乐部及庄园。作为申请人的主要居所及社交中心，安保级别极高。"
+assets = Array[Dictionary]([{
+"category": "住房",
+"name": "川普大厦",
+"value": 900000
+}, {
+"category": "存款",
+"name": "竞选基金",
+"value": 200000
+}])
+debts = Array[Dictionary]([{
+"amount": 300000,
+"category": "商业",
+"name": "多项法律诉讼费",
+"status": 0
+}])
+loan_amount = 400000
+loan_purpose = "建墙"
+loan_period = 2
+interest_rate_tier = 2
+statement = "我要建一堵墙，一堵非常、非常巨大的墙！把那些坏账和糟糕的借款人都挡在外面。没有人比我更懂贷款，believe me，我是你们见过的最棒的客户。
+
+违约？那叫战略性破产，是非常聪明的商业手段！Make your bank great again！
+
+如果你不批这笔贷款，那你一定是被Fake News洗脑了，Sad！"
+repay_probability = 0.35
+bargain_sensitivity = 2

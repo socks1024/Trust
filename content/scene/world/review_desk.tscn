@@ -1,0 +1,703 @@
+[gd_scene format=3 uid="uid://b26m6h105tjaf"]
+
+[ext_resource type="Script" uid="uid://c23nnwi4d46g5" path="res://content/scene/world/review_desk.gd" id="1_script"]
+[ext_resource type="Script" uid="uid://dpt8aulhpn6fc" path="res://content/scene/world/game_manager.gd" id="2_gm_script"]
+[ext_resource type="Script" uid="uid://brbq6jr1hl5qb" path="res://content/data/gameplay/applicant_data.gd" id="3_liurs"]
+[ext_resource type="PackedScene" uid="uid://c368hhsb6tp4i" path="res://content/scene/world/year_report.tscn" id="8_yr_scene"]
+[ext_resource type="Resource" uid="uid://ryhbla56fs3x" path="res://content/data/gameplay/random_applicant_config.tres" id="9_rnd_cfg"]
+[ext_resource type="PackedScene" uid="uid://bkjowivgs5uon" path="res://content/scene/ui/common/button/common_button.tscn" id="10_cmbtn"]
+[ext_resource type="PackedScene" uid="uid://ej3yyjr1ccyp" path="res://content/scene/world/scrolling_news.tscn" id="12_news"]
+[ext_resource type="Script" uid="uid://rn3ugyr5k2nm" path="res://content/scene/world/tutorial_manager.gd" id="13_tut_mgr"]
+[ext_resource type="PackedScene" uid="uid://c6tnkbg58nh1o" path="res://content/scene/world/tutorial_popup.tscn" id="14_tut_popup"]
+[ext_resource type="Resource" uid="uid://del71c2qrfcup" path="res://content/data/gameplay/applicants/tutorial_01_noah.tres" id="15_tut01"]
+[ext_resource type="Resource" uid="uid://cdfft4sonf6qk" path="res://content/data/gameplay/applicants/tutorial_02_victor.tres" id="16_tut02"]
+[ext_resource type="Resource" uid="uid://bennx6g5qlnp7" path="res://content/data/gameplay/applicants/tutorial_03_sophie.tres" id="17_tut03"]
+[ext_resource type="Resource" uid="uid://sqe1vk134k02" path="res://content/data/gameplay/story_schedule.tres" id="18_story"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_approve_normal"]
+content_margin_left = 12.0
+content_margin_top = 6.0
+content_margin_right = 12.0
+content_margin_bottom = 6.0
+bg_color = Color(0.15, 0.55, 0.3, 0.9)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.2, 0.7, 0.4, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_approve_pressed"]
+content_margin_left = 12.0
+content_margin_top = 6.0
+content_margin_right = 12.0
+content_margin_bottom = 6.0
+bg_color = Color(0.25, 0.75, 0.4, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.35, 0.9, 0.55, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_approve_hover"]
+content_margin_left = 12.0
+content_margin_top = 6.0
+content_margin_right = 12.0
+content_margin_bottom = 6.0
+bg_color = Color(0.2, 0.65, 0.35, 0.95)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.3, 0.85, 0.5, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="Curve" id="Curve_32ije"]
+resource_local_to_scene = true
+_limits = [-0.5, 0.5, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.2, 0.4), 0.0, 0.0, 0, 0, Vector2(0.6, -0.15), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_reject_normal"]
+content_margin_left = 12.0
+content_margin_top = 6.0
+content_margin_right = 12.0
+content_margin_bottom = 6.0
+bg_color = Color(0.6, 0.15, 0.12, 0.9)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.75, 0.2, 0.18, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_reject_pressed"]
+content_margin_left = 12.0
+content_margin_top = 6.0
+content_margin_right = 12.0
+content_margin_bottom = 6.0
+bg_color = Color(0.8, 0.25, 0.2, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.9, 0.35, 0.3, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_reject_hover"]
+content_margin_left = 12.0
+content_margin_top = 6.0
+content_margin_right = 12.0
+content_margin_bottom = 6.0
+bg_color = Color(0.7, 0.2, 0.15, 0.95)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.85, 0.25, 0.2, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="Curve" id="Curve_c2f7o"]
+resource_local_to_scene = true
+_limits = [-0.5, 0.5, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.2, 0.4), 0.0, 0.0, 0, 0, Vector2(0.6, -0.15), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[node name="ReviewDesk" type="Control" unique_id=1587701082]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="GameManager" type="Node" parent="." unique_id=1121844470]
+script = ExtResource("2_gm_script")
+random_config = ExtResource("9_rnd_cfg")
+colony_tax_base = 3000
+colony_tax_increment = 100
+story_schedule = ExtResource("18_story")
+tier_base_rates = PackedFloat32Array(5, 10, 15, 20)
+rate_dissatisfaction_max = 0.5
+collateral_dissatisfaction_max = 0.3
+bargain_desperate_modifier = -0.2
+
+[node name="TutorialManager" type="Node" parent="." unique_id=295910417]
+unique_name_in_owner = true
+script = ExtResource("13_tut_mgr")
+tutorial_applicants = Array[ExtResource("3_liurs")]([ExtResource("15_tut01"), ExtResource("16_tut02"), ExtResource("17_tut03")])
+
+[node name="Background" type="Panel" parent="." unique_id=443286904]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainLayout" type="VBoxContainer" parent="." unique_id=1651361098]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopBar" type="HBoxContainer" parent="MainLayout" unique_id=1975218758]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="MainLayout/TopBar" unique_id=1365047107]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "新曙光信用中心 - AI审核终端"
+
+[node name="MarginContainer" type="MarginContainer" parent="MainLayout/TopBar" unique_id=2021984232]
+layout_mode = 2
+theme_override_constants/margin_left = 300
+theme_override_constants/margin_right = 500
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainLayout/TopBar/MarginContainer" unique_id=1583757089]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 100
+
+[node name="FundLabel" type="Label" parent="MainLayout/TopBar/MarginContainer/HBoxContainer" unique_id=1830917493]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "🪙 资金池：500,000"
+horizontal_alignment = 1
+
+[node name="TotalLoanLabel" type="Label" parent="MainLayout/TopBar/MarginContainer/HBoxContainer" unique_id=1305172808]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "💳 在贷总额：0"
+horizontal_alignment = 1
+
+[node name="ProfitLabel" type="Label" parent="MainLayout/TopBar/MarginContainer/HBoxContainer" unique_id=9229436]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "📈 利润： +0%"
+horizontal_alignment = 1
+
+[node name="YearLabel" type="Label" parent="MainLayout/TopBar" unique_id=1265383689]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "第 1 年"
+
+[node name="Sep1" type="VSeparator" parent="MainLayout/TopBar" unique_id=284612397]
+layout_mode = 2
+
+[node name="ApplicantProgressLabel" type="Label" parent="MainLayout/TopBar" unique_id=398333093]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "申请 1/4"
+
+[node name="TopSeparator" type="HSeparator" parent="MainLayout" unique_id=1672522763]
+layout_mode = 2
+
+[node name="ContentArea" type="HBoxContainer" parent="MainLayout" unique_id=403365581]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="RightMargin" type="MarginContainer" parent="MainLayout/ContentArea" unique_id=1813538893]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 20
+
+[node name="RightPanel" type="PanelContainer" parent="MainLayout/ContentArea/RightMargin" unique_id=968551228]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.6
+mouse_filter = 1
+
+[node name="FormScroll" type="ScrollContainer" parent="MainLayout/ContentArea/RightMargin/RightPanel" unique_id=2075669256]
+layout_mode = 2
+
+[node name="FormVBox" type="VBoxContainer" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll" unique_id=623467273]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 6
+
+[node name="FormTitle" type="Label" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox" unique_id=31048643]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "📋 贷款申请表"
+
+[node name="FormSep1" type="HSeparator" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox" unique_id=591293250]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="NameRow" type="HBoxContainer" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox" unique_id=665756881]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="NameTitle" type="Label" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox/NameRow" unique_id=143003224]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "姓名："
+
+[node name="NameLabel" type="Label" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox/NameRow" unique_id=628292495]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "艾琳·沃克  女  34岁"
+
+[node name="ProfessionRow" type="HBoxContainer" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox" unique_id=1605315502]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ProfessionTitle" type="Label" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox/ProfessionRow" unique_id=482173567]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "职业："
+
+[node name="ProfessionLabel" type="Label" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox/ProfessionRow" unique_id=2124904170]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "商人"
+
+[node name="IncomeLabel" type="Label" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox/ProfessionRow" unique_id=924089525]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "年均收入：18,000"
+
+[node name="ProfessionInfoBtn" type="Button" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox/ProfessionRow" unique_id=455731745]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "ⓘ"
+
+[node name="ResidenceRow" type="HBoxContainer" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox" unique_id=1964768789]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ResidenceTitle" type="Label" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox/ResidenceRow" unique_id=584982854]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "居住地："
+
+[node name="ResidenceLabel" type="Label" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox/ResidenceRow" unique_id=1160968509]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "星港区    自有"
+
+[node name="ResidenceInfoBtn" type="Button" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox/ResidenceRow" unique_id=1328300087]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "ⓘ"
+
+[node name="FormSep2" type="HSeparator" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox" unique_id=324966007]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="AssetSectionTitle" type="Label" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox" unique_id=1719660978]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "📊 资产"
+
+[node name="AssetList" type="VBoxContainer" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox" unique_id=1922350605]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 2
+
+[node name="AssetTotalRow" type="HBoxContainer" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox" unique_id=1120220303]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="AssetTotalTitle" type="Label" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox/AssetTotalRow" unique_id=1182731628]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "资产合计"
+
+[node name="AssetTotalLabel" type="Label" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox/AssetTotalRow" unique_id=546036469]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+horizontal_alignment = 2
+
+[node name="FormSep3" type="HSeparator" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox" unique_id=1414297579]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="DebtSectionTitle" type="Label" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox" unique_id=629389525]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "📊 负债"
+
+[node name="DebtList" type="VBoxContainer" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox" unique_id=1746187532]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 2
+
+[node name="DebtTotalRow" type="HBoxContainer" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox" unique_id=587012048]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="DebtTotalTitle" type="Label" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox/DebtTotalRow" unique_id=1633740428]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "负债合计"
+
+[node name="DebtTotalLabel" type="Label" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox/DebtTotalRow" unique_id=1978566200]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+horizontal_alignment = 2
+
+[node name="FormSep4" type="HSeparator" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox" unique_id=1794944701]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="NetWorthRow" type="HBoxContainer" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox" unique_id=1433726878]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="NetWorthTitle" type="Label" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox/NetWorthRow" unique_id=1585481957]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "净资产："
+
+[node name="NetWorthLabel" type="Label" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox/NetWorthRow" unique_id=2040414004]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+
+[node name="FormSep5" type="HSeparator" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox" unique_id=1432733099]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="LoanSectionTitle" type="Label" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox" unique_id=1058623213]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "💰 贷款信息"
+
+[node name="LoanAmountRow" type="HBoxContainer" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox" unique_id=868322173]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="LoanAmountTitle" type="Label" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox/LoanAmountRow" unique_id=1890215759]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "贷款金额："
+
+[node name="LoanAmountLabel" type="Label" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox/LoanAmountRow" unique_id=519367346]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "50,000"
+
+[node name="PurposeRow" type="HBoxContainer" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox" unique_id=983904565]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="PurposeTitle" type="Label" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox/PurposeRow" unique_id=1192796395]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "贷款用途："
+
+[node name="PurposeLabel" type="Label" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox/PurposeRow" unique_id=1323091584]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "飞船维修"
+
+[node name="PeriodRow" type="HBoxContainer" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox" unique_id=1916274970]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="PeriodTitle" type="Label" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox/PeriodRow" unique_id=121853968]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "贷款周期："
+
+[node name="PeriodLabel" type="Label" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox/PeriodRow" unique_id=1727600394]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "5 年"
+
+[node name="FormSep6" type="HSeparator" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox" unique_id=112870532]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="RateRow" type="HBoxContainer" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox" unique_id=1594034160]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="RateTitle" type="Label" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox/RateRow" unique_id=869895891]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "利率："
+
+[node name="RateLabel" type="Label" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox/RateRow" unique_id=1079040210]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "14%（基础 10% × 1.4）"
+
+[node name="InterestRow" type="HBoxContainer" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox" unique_id=196578947]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="InterestTitle" type="Label" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox/InterestRow" unique_id=1782136741]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "最终利息："
+
+[node name="InterestLabel" type="Label" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox/InterestRow" unique_id=1929133356]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "35,000"
+
+[node name="RepaymentRow" type="HBoxContainer" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox" unique_id=835149862]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="RepaymentTitle" type="Label" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox/RepaymentRow" unique_id=1783363483]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "到期还款："
+
+[node name="RepaymentLabel" type="Label" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox/RepaymentRow" unique_id=1443005100]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "85,000"
+
+[node name="ApprovalConditionsSection" type="VBoxContainer" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox" unique_id=468588837]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 6
+
+[node name="ConditionsSep" type="HSeparator" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox/ApprovalConditionsSection" unique_id=554281777]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ConditionsTitle" type="Label" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox/ApprovalConditionsSection" unique_id=2079983412]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "⚙️ 审批条件"
+
+[node name="RateTierRow" type="HBoxContainer" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox/ApprovalConditionsSection" unique_id=1951655869]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="RateTierTitle" type="Label" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox/ApprovalConditionsSection/RateTierRow" unique_id=11474989]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+text = "利率："
+
+[node name="RateSlider" type="HSlider" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox/ApprovalConditionsSection/RateTierRow" unique_id=1425278359]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 30.0
+value = 10.0
+
+[node name="RatePercentLabel" type="Label" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox/ApprovalConditionsSection/RateTierRow" unique_id=639616390]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "10%"
+horizontal_alignment = 1
+
+[node name="RateTierLabel" type="Label" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox/ApprovalConditionsSection/RateTierRow" unique_id=1402388226]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+text = "标准"
+horizontal_alignment = 1
+
+[node name="CollateralTitleRow" type="HBoxContainer" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox/ApprovalConditionsSection" unique_id=1489827171]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="CollateralTitle" type="Label" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox/ApprovalConditionsSection/CollateralTitleRow" unique_id=95173445]
+layout_mode = 2
+text = "抵押要求："
+
+[node name="CollateralRatioLabel" type="Label" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox/ApprovalConditionsSection/CollateralTitleRow" unique_id=1477767686]
+unique_name_in_owner = true
+modulate = Color(0.8, 0.9, 1, 0.8)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CollateralList" type="VBoxContainer" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox/ApprovalConditionsSection" unique_id=2088746578]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 2
+
+[node name="NoAssetHint" type="Label" parent="MainLayout/ContentArea/RightMargin/RightPanel/FormScroll/FormVBox/ApprovalConditionsSection" unique_id=1811454234]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.5)
+layout_mode = 2
+text = "（该申请者无可抵押资产）"
+
+[node name="LeftMargin" type="MarginContainer" parent="MainLayout/ContentArea" unique_id=245892628]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.6
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 20
+
+[node name="LeftPanel" type="VBoxContainer" parent="MainLayout/ContentArea/LeftMargin" unique_id=1967524919]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="InfoPanel" type="PanelContainer" parent="MainLayout/ContentArea/LeftMargin/LeftPanel" unique_id=412610713]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.4
+
+[node name="InfoVBox" type="VBoxContainer" parent="MainLayout/ContentArea/LeftMargin/LeftPanel/InfoPanel" unique_id=1067173803]
+layout_mode = 2
+
+[node name="InfoTitle" type="Label" parent="MainLayout/ContentArea/LeftMargin/LeftPanel/InfoPanel/InfoVBox" unique_id=1736243982]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "ℹ️ 详细说明"
+
+[node name="InfoLabel" type="RichTextLabel" parent="MainLayout/ContentArea/LeftMargin/LeftPanel/InfoPanel/InfoVBox" unique_id=815823918]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "点击申请表中的 ⓘ 按钮查看详细说明。"
+scroll_following = true
+
+[node name="StatementPanel" type="PanelContainer" parent="MainLayout/ContentArea/LeftMargin/LeftPanel" unique_id=1019272405]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.6
+
+[node name="StatementVBox" type="VBoxContainer" parent="MainLayout/ContentArea/LeftMargin/LeftPanel/StatementPanel" unique_id=1115900]
+layout_mode = 2
+
+[node name="StatementTitle" type="Label" parent="MainLayout/ContentArea/LeftMargin/LeftPanel/StatementPanel/StatementVBox" unique_id=193948812]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "💬 申请人陈述"
+
+[node name="StatementLabel" type="RichTextLabel" parent="MainLayout/ContentArea/LeftMargin/LeftPanel/StatementPanel/StatementVBox" unique_id=1394725576]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+scroll_following = true
+
+[node name="MiddleSeparator" type="HSeparator" parent="MainLayout" unique_id=556182110]
+layout_mode = 2
+
+[node name="ActionBar" type="MarginContainer" parent="MainLayout" unique_id=277048975]
+layout_mode = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_right = 200
+
+[node name="ActionBar" type="HBoxContainer" parent="MainLayout/ActionBar" unique_id=346455398]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="ApproveBtn" parent="MainLayout/ActionBar/ActionBar" unique_id=1733829629 instance=ExtResource("10_cmbtn")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_approve_normal")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_approve_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_approve_hover")
+text = "批准"
+ease_curve = SubResource("Curve_32ije")
+
+[node name="RejectBtn" parent="MainLayout/ActionBar/ActionBar" unique_id=1399427735 instance=ExtResource("10_cmbtn")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_reject_normal")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_reject_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_reject_hover")
+text = "拒绝"
+ease_curve = SubResource("Curve_c2f7o")
+
+[node name="BottomSeparator" type="HSeparator" parent="MainLayout" unique_id=1500243691]
+layout_mode = 2
+
+[node name="ScrollingNews" parent="MainLayout" unique_id=292276056 instance=ExtResource("12_news")]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+news_gap = 400.0
+news_speed = 50.0
+
+[node name="YearReport" parent="." unique_id=262996438 instance=ExtResource("8_yr_scene")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+
+[node name="TutorialPopup" parent="." unique_id=342222832 instance=ExtResource("14_tut_popup")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+slide_offset = 600.0
+anim_duration = 1.0
+slide_direction = 3
+slide_in_ease = 2
+slide_out_ease = 2

@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="ApplicantData" format=3 uid="uid://dumb0saijsw0j"]
+
+[ext_resource type="Script" uid="uid://brbq6jr1hl5qb" path="res://content/data/gameplay/applicant_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+applicant_name = "夜神月"
+gender = "男"
+age = 23
+profession = "大学生"
+profession_description = "东应大学在读本科生，学业成绩优异，常年位居全国模拟考试榜首。目前无合法申报的收入来源，但声称正在筹备一项\"改变全球秩序\"的宏大项目。"
+residence_type = 4
+custom_residence_name = "东京"
+custom_residence_description = "位于日本关东地区的一处标准中产阶级独栋住宅。申请人卧室门锁有被改造过的痕迹，且抽屉内疑似装有复杂的防盗机关。"
+assets = Array[Dictionary]([{
+"category": "设备",
+"name": "黑色笔记本",
+"value": 5000
+}])
+loan_amount = 100000
+loan_purpose = "创建新世界"
+interest_rate_tier = 0
+statement = "这笔钱将用于构建一个没有犯罪的完美新世界。具体细节？抱歉，这属于最高机密。
+
+你只需要明白一点：在我的新世界里，按时还贷的良民会得到庇护，而那些恶意逾期的老赖……他们的心脏可能会不太好。
+
+呵呵，开个玩笑。作为全国模考第一，我的信用评级应该是完美的吧？"
+repay_probability = 0.2
+bargain_sensitivity = 2

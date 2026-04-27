@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c00cxd8thjs68"]
+
+[ext_resource type="Script" uid="uid://d0h56yp3vgmyx" path="res://content/scene/ui/menus/settings/input/guide_config_item_controls/config_guide_item_row.gd" id="1_wf8eb"]
+[ext_resource type="PackedScene" uid="uid://wf7efvy8mwr3" path="res://content/scene/ui/menus/settings/input/guide_config_item_controls/guide_config_item_button.tscn" id="2_o145j"]
+
+[node name="ConfigItemRow" type="HBoxContainer" unique_id=1353127220]
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+script = ExtResource("1_wf8eb")
+guide_config_item_button_scene = ExtResource("2_o145j")
+
+[node name="NameLabel" type="Label" parent="." unique_id=450739530]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+text = "DisplayName"
+vertical_alignment = 1
+
+[node name="ButtonsContainer" type="HBoxContainer" parent="." unique_id=1949605061]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8

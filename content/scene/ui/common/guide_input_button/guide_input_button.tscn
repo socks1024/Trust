@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://mx5v06pw2aqd"]
+
+[ext_resource type="Script" uid="uid://7rvh0ku26sis" path="res://content/scene/ui/common/guide_input_button/guide_input_button.gd" id="1_pta66"]
+[ext_resource type="Resource" uid="uid://b7tq72k7uildv" path="res://content/art/audio/events/ui/common_button_pressed.tres" id="2_h3ers"]
+[ext_resource type="Script" uid="uid://db27ccgomq455" path="res://addons/guide/remapping/guide_input_detector.gd" id="3_lnkg7"]
+
+[sub_resource type="Curve" id="Curve_ivwpl"]
+resource_local_to_scene = true
+_limits = [-0.5, 0.5, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.2, 0.4), 0.0, 0.0, 0, 0, Vector2(0.6, -0.15), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[node name="InputButton" type="Button" unique_id=848927360]
+custom_minimum_size = Vector2(120, 0)
+offset_right = 120.0
+offset_bottom = 39.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+text = "InputButton"
+script = ExtResource("1_pta66")
+waiting_text = "..."
+duration = 0.3
+ease_curve = SubResource("Curve_ivwpl")
+press_sound = ExtResource("2_h3ers")
+
+[node name="InputDetector" type="Node" parent="." unique_id=1177810719]
+script = ExtResource("3_lnkg7")
