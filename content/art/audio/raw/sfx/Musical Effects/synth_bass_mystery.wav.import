@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cglc81yxmjy4a"
+path="res://.godot/imported/synth_bass_mystery.wav-31f654abffd79ccc6d05c0e91a1be154.sample"
+
+[deps]
+
+source_file="res://content/art/audio/raw/sfx/Musical Effects/synth_bass_mystery.wav"
+dest_files=["res://.godot/imported/synth_bass_mystery.wav-31f654abffd79ccc6d05c0e91a1be154.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
