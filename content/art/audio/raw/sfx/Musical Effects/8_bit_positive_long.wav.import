@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ciecp24w2vo2j"
+path="res://.godot/imported/8_bit_positive_long.wav-b239be9b72191d3b55fb115b8f0929e6.sample"
+
+[deps]
+
+source_file="res://content/art/audio/raw/sfx/Musical Effects/8_bit_positive_long.wav"
+dest_files=["res://.godot/imported/8_bit_positive_long.wav-b239be9b72191d3b55fb115b8f0929e6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

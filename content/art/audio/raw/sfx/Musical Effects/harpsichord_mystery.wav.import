@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dnmomx8psh4lh"
+path="res://.godot/imported/harpsichord_mystery.wav-58427413ae121886f2841f4c37247c75.sample"
+
+[deps]
+
+source_file="res://content/art/audio/raw/sfx/Musical Effects/harpsichord_mystery.wav"
+dest_files=["res://.godot/imported/harpsichord_mystery.wav-58427413ae121886f2841f4c37247c75.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

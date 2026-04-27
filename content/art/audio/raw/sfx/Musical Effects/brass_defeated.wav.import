@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bd3pl38ka332g"
+path="res://.godot/imported/brass_defeated.wav-d8bdc26a976a79dbda4a614f5b665d3c.sample"
+
+[deps]
+
+source_file="res://content/art/audio/raw/sfx/Musical Effects/brass_defeated.wav"
+dest_files=["res://.godot/imported/brass_defeated.wav-d8bdc26a976a79dbda4a614f5b665d3c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

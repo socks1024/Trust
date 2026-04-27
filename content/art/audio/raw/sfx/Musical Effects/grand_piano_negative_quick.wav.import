@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dmtxmrfutorek"
+path="res://.godot/imported/grand_piano_negative_quick.wav-2911d50dd611d50f1f316d5650ee4ff3.sample"
+
+[deps]
+
+source_file="res://content/art/audio/raw/sfx/Musical Effects/grand_piano_negative_quick.wav"
+dest_files=["res://.godot/imported/grand_piano_negative_quick.wav-2911d50dd611d50f1f316d5650ee4ff3.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
